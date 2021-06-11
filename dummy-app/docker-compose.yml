@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  app-backend:
+    container_name: app-back
+    image: dummy-app-back
+    networks:
+      - back-db
+    ports:
+      - 4000:4000
+    working_dir: /home/node/app
+    command: "npm start"
+  app-db:
+    container_name: app-db
+    image: dummy-app-db
+    restart: always
+    networks:
+      - back-db
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
+  db-admin:
+    container_name: app-db-admin
+    image: adminer
+    restart: always
+    networks:
+      - back-db
+    ports:
+      - 8080:8080
+networks:
+  front-back:
+  back-db:

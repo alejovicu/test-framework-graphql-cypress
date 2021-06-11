@@ -1,0 +1,15 @@
+{
+  "name": "dummy-backend-gql",
+  "version": "1.0.0",
+  "description": "Just a dummy backend.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "alejovicu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "postgraphile": "^4.12.3"
+  }
+}
